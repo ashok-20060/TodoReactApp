@@ -1,10 +1,15 @@
 import React from "react";
 import "../src/Extra/App.css";
+import Header from "./Header";
+import Inputbox from "./Inputbox";
+import Button from "./Button";
+import ActiveList from "./ActiveList";
+import CompletedList from "./CompletedList";
 import "./Todo.css";
 
 export default class Todo extends React.Component {
-  constructor() {
-    super();
+  constructor(props) {
+    super(props);
     this.state = {
       task: "",
       todoList: [],
@@ -46,7 +51,7 @@ export default class Todo extends React.Component {
     };
   }
 
-  onChange = (event) => {
+  onChange=(event) => {
     this.setState({
       task: event.target.value,
     });
@@ -60,69 +65,17 @@ export default class Todo extends React.Component {
 
 
   render() {
-    const showtodoList = this.state.todoList.length
-      ? this.state.todoList.map((item, index) => {
-          return (
-              <li key={item}>
-              <span>{this.state.todoList[index]}</span>
-              <button
-              className="completebtn"
-                onClick={() => this.completeTask(this.state.todoList[index])}
-              >
-                Complete
-              </button>
-              <button
-                onClick={() => this.removeTask(this.state.todoList[index])}
-              >
-                delete
-              </button>
-              </li>
-          );
-        })
-      : "";
-
-    const showcompletedTodoList = this.state.completedTodoList.length
-      ? this.state.completedTodoList.map((item, index) => {
-          return (
-              <li key={item}>
-                <span>{this.state.completedTodoList[index]}</span>
-              <button
-                onClick={() =>
-                  this.removeCompletedTask(this.state.completedTodoList[index])
-                }
-              >
-                deleteCompletedTask
-              </button>
-            </li>
-          );
-        })
-      : "";
-
     return (
       <div>
-        <h1 className="titleHeading">MyTodoApp</h1>
-        <div className="todolist-bar">
-          <input
-           type="text"
-           className="input-text"
-           placeholder="Enter new task for TodoList"
-           maxLength={50}
-           value={this.state.task}
-            onChange={this.onChange}
-            onKeyPress={this.handleKey}
-         />
-         <button className="addtask-btn" onClick={this.addTask}>Add task</button>
-        </div>
-        <div className="shownlists">
-          <div className="tasklist">
-            <h2>TodoList</h2>
-            <ol> {showtodoList}</ol>
-          </div>
-          <div className="Completed-list">
-           <h2>Completed List</h2>
-           <ol>{showcompletedTodoList}</ol>
-         </div>
-        </div>
+        <Header>MyTodoApp</Header>
+        <Inputbox value={this.state.task} onChange={this.onChange} onKeyPress={this.handleKey}/>
+        <Button className="addtask-btn" onClick={this.addTask}>Add task</Button>
+        <ActiveList list={this.state.todoList} completeTask={this.completeTask} removeTask={this.removeTask} >
+          ActiveList
+          </ActiveList>
+         <CompletedList list={this.state.completedTodoList}  removeCompletedTask={this.removeCompletedTask}>
+           CompletedList
+           </CompletedList> 
       </div>
     );
   }
