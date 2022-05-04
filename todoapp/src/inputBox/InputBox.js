@@ -1,5 +1,5 @@
 import React from "react";
-import './Inputbox.css';
+import './inputBox.css';
 export default class Inputbox extends React.Component{
 render(){
     return(

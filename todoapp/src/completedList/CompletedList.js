@@ -1,7 +1,7 @@
 import React from "react";
-import './CompletedList.css';
-import Header from "./Header";
-import Button from "./Button";
+import './completedList.css';
+import Header from "../header/index";
+import Button from "../button/index";
 export default class CompletedList extends React.Component{
 render(){
     const showcompletedTodoList = this.props.list.length

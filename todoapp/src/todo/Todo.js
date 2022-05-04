@@ -1,11 +1,11 @@
 import React from "react";
-import "../src/Extra/App.css";
-import Header from "./Header";
-import Inputbox from "./Inputbox";
-import Button from "./Button";
-import ActiveList from "./ActiveList";
-import CompletedList from "./CompletedList";
-import "./Todo.css";
+import "../ignoreFiles/App.css";
+import Header from "../header/index";
+import Inputbox from "../inputBox/index";
+import Button from "../button/index";
+import ActiveList from "../activeList/index";
+import CompletedList from "../completedList/index";
+import "./todo.css";
 
 export default class Todo extends React.Component {
   constructor(props) {
@@ -17,7 +17,6 @@ export default class Todo extends React.Component {
     };
 
     this.completeTask = (item) => {
-      //console.log(item);
       let index = this.state.todoList.indexOf(item);
       let newList = this.state.todoList;
       let completedTask = newList[index];
@@ -67,14 +66,16 @@ export default class Todo extends React.Component {
   render() {
     return (
       <div>
-        <Header>MyTodoApp</Header>
+        <Header>My Todo App</Header>
+        <div className="inputbar">
         <Inputbox value={this.state.task} onChange={this.onChange} onKeyPress={this.handleKey}/>
         <Button className="addtask-btn" onClick={this.addTask}>Add task</Button>
+        </div>
         <ActiveList list={this.state.todoList} completeTask={this.completeTask} removeTask={this.removeTask} >
-          ActiveList
+          Active List
           </ActiveList>
          <CompletedList list={this.state.completedTodoList}  removeCompletedTask={this.removeCompletedTask}>
-           CompletedList
+           Completed List
            </CompletedList> 
       </div>
     );

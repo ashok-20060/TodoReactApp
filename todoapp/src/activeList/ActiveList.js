@@ -1,7 +1,7 @@
 import React from "react";
-import './ActiveList.css';
-import Header from "./Header";
-import Button from "./Button";
+import './activeList.css';
+import Header from "../header/index";
+import Button from "../button/index";
 export default class ActiveList extends React.Component{
 render(){
     const showtodoList = this.props.list.length
