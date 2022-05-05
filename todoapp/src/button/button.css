@@ -1,7 +1,17 @@
-.addtask-btn {
-    /* margin-top: -21px;
-    margin-left: 355px;
-    position: absolute; */
+button {
+    margin-left: 5px;
+    padding: 3px;
     cursor: pointer;
-    color: azure;
+}
+.addtask-btn {
+    color: orange;
     }
+.completebtn{
+    background-color:seagreen;
+}
+.deletebtn{
+    background-color: indianred;
+}
+.deletecompletedbtn{
+    background-color: indianred;
+}

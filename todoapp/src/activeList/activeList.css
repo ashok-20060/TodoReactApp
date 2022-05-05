@@ -1,22 +1,14 @@
-.tasklist {
-    float: left;
-    margin-left: 10%;
-    margin-top: 20px;
-}
-li {
-    margin-top: 10px;
-}
-li > button {
-    margin-left: 10px;
-    cursor: pointer;
-    background-color: rgb(202, 87, 87);
-    color: azure;
-}
-.completebtn {
-    margin: 0px!important;
-    margin-left: 10px !important;
-    background: green;
-}
-li > span {
-    color: aliceblue;
-}
+     .tasklist {
+        width: 50%;
+    }
+    ol {
+        margin-top: 30px;
+    }
+    li {
+        margin-top: 5px;
+        margin-left: 25%;
+        color: yellow;
+    }
+    span {
+        font-size: large;
+    }

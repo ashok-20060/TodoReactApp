@@ -1,19 +1,14 @@
-li {
-    margin-top: 10px;
-}
-li > button {
-    margin-left: 10px;
-    cursor: pointer;
-    background-color: rgb(202, 87, 87);
-    color: azure;
-}
-.completebtn {
-    background-color: green ;
-}
-li > span {
-    color: aliceblue;
-}
 .completedtasklist {
-    float: right;
-    margin-right: 20%;
+    width: 50%;
+} 
+ol {
+    margin-top: 30px;
+}
+li {
+    margin-top: 5px;
+    margin-left: 25%;
+    color: yellow;
+}
+span {
+    font-size: large;
 }

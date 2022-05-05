@@ -9,7 +9,7 @@ render(){
           return (
               <li key={item}>
                 <span>{this.props.list[index]}</span>
-              <Button  onClick={()=>{this.props.removeCompletedTask(this.props.list[index])}}>deleteCompletedTask</Button>
+              <Button className="deletecompletedbtn" onClick={()=>{this.props.removeCompletedTask(this.props.list[index])}}>deleteCompletedTask</Button>
             </li>
           );
         })

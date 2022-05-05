@@ -1,6 +1,11 @@
 .input-text {
-    margin-top: 110px;
-    /* display: inline-block; */
-    /* width: 15%; */
-    color: aliceblue;
+    width: 270px;
+    padding: 3px;
+    color: orange;
+    border: 1px solid white;
+    border-radius: 5px;
+}
+::placeholder {
+    color: yellowgreen;
+    opacity: 1;
 }

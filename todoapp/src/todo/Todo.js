@@ -43,10 +43,11 @@ export default class Todo extends React.Component {
       });
     };
     this.addTask=()=>{
+      if(this.state.task.length>0){
       this.setState({
         todoList: [...this.state.todoList, this.state.task],
         task: "",
-      });
+      });}
     };
   }
 
@@ -68,15 +69,17 @@ export default class Todo extends React.Component {
       <div>
         <Header>My Todo App</Header>
         <div className="inputbar">
-        <Inputbox value={this.state.task} onChange={this.onChange} onKeyPress={this.handleKey}/>
-        <Button className="addtask-btn" onClick={this.addTask}>Add task</Button>
+         <Inputbox value={this.state.task} onChange={this.onChange} onKeyPress={this.handleKey}/>
+         <Button className="addtask-btn" onClick={this.addTask}>Add task</Button>
         </div>
-        <ActiveList list={this.state.todoList} completeTask={this.completeTask} removeTask={this.removeTask} >
-          Active List
+        <div className="lists">
+         <ActiveList list={this.state.todoList} completeTask={this.completeTask} removeTask={this.removeTask} >
+            Active List
           </ActiveList>
-         <CompletedList list={this.state.completedTodoList}  removeCompletedTask={this.removeCompletedTask}>
-           Completed List
-           </CompletedList> 
+          <CompletedList list={this.state.completedTodoList}  removeCompletedTask={this.removeCompletedTask}>
+            Completed List
+          </CompletedList>
+        </div> 
       </div>
     );
   }
