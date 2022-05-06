@@ -1,5 +1,6 @@
 import React from "react";
-import './completedList.css';
+// import './completedList.css';
+import styles from './completedList.module.scss';
 import Header from "../header/index";
 import Button from "../button/index";
 export default class CompletedList extends React.Component{
@@ -15,7 +16,7 @@ render(){
         })
       : "";
     return(
-        <div className="completedtasklist">
+        <div className={styles.completedtasklist}>
         <Header>{this.props.children}</Header>
         <ol> {showcompletedTodoList}</ol>
       </div>

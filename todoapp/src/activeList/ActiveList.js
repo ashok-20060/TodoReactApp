@@ -1,5 +1,6 @@
 import React from "react";
-import './activeList.css';
+// import './activeList.css';
+import styles from './activeList.module.scss';
 import Header from "../header/index";
 import Button from "../button/index";
 export default class ActiveList extends React.Component{
@@ -16,7 +17,7 @@ render(){
         })
       : "";
     return(
-        <div className="tasklist">
+        <div className={styles.tasklist}>
         <Header>{this.props.children}</Header>
         <ol> {showtodoList}</ol>
       </div>

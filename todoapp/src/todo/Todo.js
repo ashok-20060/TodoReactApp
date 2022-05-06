@@ -1,11 +1,12 @@
 import React from "react";
 import "../ignoreFiles/App.css";
 import Header from "../header/index";
-import Inputbox from "../inputBox/index";
+import InputBox from "../inputBox/index";
 import Button from "../button/index";
 import ActiveList from "../activeList/index";
 import CompletedList from "../completedList/index";
-import "./todo.css";
+// import "./todo.css";
+import styles from './todo.module.scss';
 
 export default class Todo extends React.Component {
   constructor(props) {
@@ -68,11 +69,11 @@ export default class Todo extends React.Component {
     return (
       <div>
         <Header>My Todo App</Header>
-        <div className="inputbar">
-         <Inputbox value={this.state.task} onChange={this.onChange} onKeyPress={this.handleKey}/>
+        <div className={styles.inputbar}>
+         <InputBox value={this.state.task} onChange={this.onChange} onKeyPress={this.handleKey}/>
          <Button className="addtask-btn" onClick={this.addTask}>Add task</Button>
         </div>
-        <div className="lists">
+        <div className={styles.lists}>
          <ActiveList list={this.state.todoList} completeTask={this.completeTask} removeTask={this.removeTask} >
             Active List
           </ActiveList>
