@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./activeList.module.scss";
 import Header from "../header";
 import OrderedList from "../orderedList";
+import PropTypes from 'prop-types';
 export default class ActiveList extends React.Component {
   render() {
     return (
@@ -15,4 +16,10 @@ export default class ActiveList extends React.Component {
       </div>
     );
   }
+}
+ActiveList.protoTypes={
+  name:PropTypes.string,
+  activeList:PropTypes.array,
+  completeTask:PropTypes.func,
+  removeTask:PropTypes.func,
 }

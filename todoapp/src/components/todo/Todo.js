@@ -4,6 +4,7 @@ import BothLists from "../bothLists";
 import InputBar from "../inputBar";
 import styles from "./todo.module.scss";
 import { connect } from "react-redux";
+import PropTypes from 'prop-types';
 import {
   addTodo,
   completeTodo,
@@ -60,6 +61,14 @@ class Todo extends React.Component {
       </div>
     );
   }
+}
+
+Todo.protoTypes={
+  todoList:PropTypes.array,
+  completedTodoList:PropTypes.array,
+  completeTodo:PropTypes.func,
+  removeTodo:PropTypes.func,
+  removeCompletedTodo:PropTypes.func,
 }
 
 function mapStateToProps(state) {

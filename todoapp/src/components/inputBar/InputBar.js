@@ -2,6 +2,8 @@ import React from "react";
 import styles from "./inputBar.module.scss";
 import InputBox from "../inputBox";
 import Button from "../button";
+import PropTypes from 'prop-types';
+
 export default class InputBar extends React.Component {
   render() {
     return (
@@ -19,4 +21,10 @@ export default class InputBar extends React.Component {
       </div>
     );
   }
+}
+InputBar.propTypes={
+  value:PropTypes.string,
+  onChange:PropTypes.func,
+  onKeyPress:PropTypes.func,
+  onClick:PropTypes.func,
 }

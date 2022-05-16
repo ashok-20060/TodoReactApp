@@ -2,6 +2,7 @@ import React from "react";
 import _map from "lodash/map";
 import Button from "../button";
 import styles from "./orderedList.module.scss";
+import PropTypes from 'prop-types';
 const OrderedList = (props) => {
   return (
     <ol>
@@ -39,4 +40,13 @@ const OrderedList = (props) => {
     </ol>
   );
 };
+OrderedList.propTypes={
+  list:PropTypes.array,
+  completeTask:PropTypes.func,
+  removeTask:PropTypes.func,
+  removeCompletedTask:PropTypes.func,
+  completedListFlag:PropTypes.bool,
+}
+
 export default OrderedList;
+

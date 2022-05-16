@@ -1,5 +1,6 @@
 import React from "react";
 import styles from "./inputBox.module.scss";
+import PropTypes from 'prop-types';
 export default class InputBox extends React.Component {
   constructor(props) {
     super(props);
@@ -22,4 +23,9 @@ export default class InputBox extends React.Component {
       />
     );
   }
+}
+InputBox.propTypes={
+  value:PropTypes.string,
+  onChange:PropTypes.func,
+  onKeyPress:PropTypes.func,
 }

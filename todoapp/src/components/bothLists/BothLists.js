@@ -2,6 +2,7 @@ import React from "react";
 import styles from "./bothLists.module.scss";
 import ActiveList from "../activeList";
 import CompletedList from "../completedList";
+import PropTypes from 'prop-types';
 export default class BothLists extends React.Component {
   render() {
     return (
@@ -21,3 +22,12 @@ export default class BothLists extends React.Component {
     );
   }
 }
+
+BothLists.protoTypes={
+  activeList:PropTypes.array,
+  completedList:PropTypes.array,
+  completeTask:PropTypes.func,
+  removeTask:PropTypes.func,
+  removeCompletedTask:PropTypes.func,
+}
+
