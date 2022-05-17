@@ -5,18 +5,18 @@ export const addTodo = (task) => (dispatch) =>
     type: ACTION_TYPES.ADD_NEW_TASK,
     payload: task,
   });
-export const completeTodo = (completdTask) => (dispatch) =>
+export const completeTodo = (id) => (dispatch) =>
   dispatch({
     type: ACTION_TYPES.COMPLETE_TASK,
-    payload: completdTask,
+    payload: id,
   });
-export const removeTodo = (removeTask) => (dispatch) =>
+export const removeTodo = (id) => (dispatch) =>
   dispatch({
     type: ACTION_TYPES.REMOVE_TASK,
-    payload: removeTask,
+    payload: id,
   });
-export const removeCompletedTodo = (removeCompletedTask) => (dispatch) =>
+export const removeCompletedTodo = (id) => (dispatch) =>
   dispatch({
     type: ACTION_TYPES.REMOVE_COMPLETED_TASK,
-    payload: removeCompletedTask,
+    payload: id,
   });
